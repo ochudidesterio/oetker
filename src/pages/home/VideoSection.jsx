@@ -20,7 +20,7 @@ const VideoSection = () => {
         </h3>
         <div className="w-10 h-[1px] bg-black  max-md:hidden"></div>
       </div>
-      <p className="font-inter text-sm text-secondary mt-5 px-[15%] ">
+      <p className="font-inter text-sm text-secondary mt-5 px-[15%] max-md:px-[5%] ">
         Oetker Collection hotels are true masterpieces located in the world’s
         most desirable destinations. Each property is a landmark and a timeless
         icon of elegance. With deep devotion to local culture and community, our

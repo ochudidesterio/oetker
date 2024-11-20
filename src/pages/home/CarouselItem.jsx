@@ -89,7 +89,7 @@ const CarouselItem = () => {
                 <div className="flex justify-center pt-4">
                   <h4 className="text-xl font-montserrat">{item.title}</h4>
                 </div>
-                <div className="w-full px-2 h-20">
+                <div className="w-full px-2 h-20 pt-4">
                   <p className="text-center text-secondary text-sm font-inter ">
                   {item.description}
                 </p>
