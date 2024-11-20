@@ -15,9 +15,9 @@ const SocialMedia = () => {
      viewport={{ once: false }}
      className="w-full flex flex-col justify-center items-center">
       <div className="text-xl">#MasterpieceHotels</div>
-      <div className="flex gap-8 py-6">
+      <div className="flex gap-8 py-6 max-md:gap-2">
         {[
-          { icon: <FaTiktok size={20} />, label: "TIK TOK" },
+          { icon: <FaTiktok size={20}  />, label: "TIK TOK" },
           { icon: <FaInstagram size={20} />, label: "INSTAGRAM" },
           { icon: <FaFacebookF size={20} />, label: "FACEBOOK" },
           { icon: <FaLinkedin size={20} />, label: "LINKEDIN" },
@@ -26,8 +26,8 @@ const SocialMedia = () => {
           { icon: <BsSinaWeibo size={20} />, label: "SINA WEIBO" },
           { icon: <LiaMailBulkSolid size={20} />, label: "NEWS LETTER" },
         ].map(({ icon, label }, index) => (
-          <div key={index} className="flex flex-col items-center group">
-            <div className="text-accent">{icon}</div>
+          <div key={index} className="flex flex-col items-center group max-sm:w-[24px] ">
+            <div className="text-accent ">{icon}</div>
             <h6 className="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {label}
             </h6>
