@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React,{ useState, useEffect } from "react";
 import {  MdOutlineKeyboardArrowDown } from "react-icons/md";
 import NavMenu from "./NavMenu";
 import NavButton from "./NavButton";
 
-const Navbar = ({scrolled}) => {
+const Navbar = () => {
 
 
   const [isMouseEnter,setIsMouseEnter] = useState(false) 
@@ -11,7 +11,23 @@ const Navbar = ({scrolled}) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [language,setLanguage] = useState("EN")
 
+  const [scrolled, setScrolled] = useState(false); // New state to track scroll
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
 
   const handleMouseEnter=()=>{
     setIsMouseEnter(true)
