@@ -5,6 +5,7 @@ import CustomBreak from "../../components/CustomBreak";
 import SocialMedia from "../../components/SocialMedia";
 import VideoSection from "./VideoSection";
 import DiscoverySection from "./DiscoverySection";
+import MeetUsSection from "./MeetUsSection";
 
 const HomePage = () => {
   return (
@@ -21,7 +22,7 @@ const HomePage = () => {
       <CustomBreak/>
       <DiscoverySection/>
       <CustomBreak/>
-    
+      <MeetUsSection/>
       <SocialMedia/>
     </div>
   );

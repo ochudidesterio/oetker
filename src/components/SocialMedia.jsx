@@ -13,7 +13,7 @@ const SocialMedia = () => {
      initial="hidden"
      whileInView={"show"}
      viewport={{ once: false }}
-     className="w-full flex flex-col justify-center items-center">
+     className="w-full flex flex-col justify-center items-center pt-20">
       <div className="text-xl font-cardo">#MasterpieceHotels</div>
       <div className="flex gap-8 py-6 max-md:gap-4">
         {[

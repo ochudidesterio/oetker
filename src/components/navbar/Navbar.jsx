@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import {  MdOutlineKeyboardArrowDown } from "react-icons/md";
 import NavMenu from "./NavMenu";
 import NavButton from "./NavButton";
@@ -10,6 +10,26 @@ const Navbar = () => {
   const [isMouseLeave,setIsMouseLeave] = useState(false)
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [language,setLanguage] = useState("EN")
+
+  const [scrolled, setScrolled] = useState(false); // New state to track scroll
+
+  // Update scroll state when the user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true); // Change state when user scrolls down
+       
+      } else {
+        setScrolled(false); // Reset when the user scrolls up
+        
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleMouseEnter=()=>{
     setIsMouseEnter(true)
@@ -31,8 +51,12 @@ const Navbar = () => {
     <div 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave} 
-        className="fixed top-0 left-0 z-50 w-full flex justify-between items-center bg-navdark shadow-sm bg-opacity-70
-     text-white hover:bg-white hover:text-secondary h-20 px-8">
+    //     className="fixed top-0 left-0 z-50 w-full flex justify-between items-center bg-navdark shadow-sm bg-opacity-70
+    //  text-white hover:bg-white hover:text-secondary h-20 px-8"
+    className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-8 transition-all ${
+      scrolled ? "bg-white text-black shadow-lg" : "bg-navdark bg-opacity-70 text-white"
+    } h-20`}
+     >
       <div className="w-full">
         <NavMenu/>
       </div>
@@ -50,7 +74,7 @@ const Navbar = () => {
             {language} <MdOutlineKeyboardArrowDown />
           </h5>
           {isDropdownVisible && (
-            <div className={`absolute top-full mt-2 text-sm shadow-md ${isMouseEnter && 'bg-white text-black border-[0.5px] '} ${isMouseLeave && 'bg-navdark bg-opacity-70 text-white'} `}>
+            <div className={`absolute top-full mt-2 text-sm shadow-md ${isMouseEnter && 'bg-white text-black border-[0.5px] '}  ${isMouseLeave && 'bg-navdark bg-opacity-70 text-white'} `}>
               <ul className="flex flex-col">
                 <li className="hover:underline px-4 py-2 cursor-pointer" onClick={()=>handleLanguageChange("DE")}>DE</li>
                 <li className="hover:underline px-4 py-2 cursor-pointer" onClick={()=>handleLanguageChange("EN")}>EN</li>
