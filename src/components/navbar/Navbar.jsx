@@ -13,21 +13,21 @@ const Navbar = () => {
 
   const [scrolled, setScrolled] = useState(false); // New state to track scroll
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 50;
+  //     if (isScrolled !== scrolled) {
+  //       setScrolled(isScrolled);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    // Cleanup listener on unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrolled]);
+  //   // Cleanup listener on unmount
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [scrolled]);
 
   const handleMouseEnter=()=>{
     setIsMouseEnter(true)
@@ -49,11 +49,11 @@ const Navbar = () => {
     <div 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave} 
-    //     className="fixed top-0 left-0 z-50 w-full flex justify-between items-center bg-navdark shadow-sm bg-opacity-70
-    //  text-white hover:bg-white hover:text-secondary h-20 px-8"
-    className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-8 transition-all ${
-      scrolled ? "bg-white text-black shadow-lg" : "bg-navdark bg-opacity-70 text-white"
-    } h-20`}
+        className="fixed top-0 left-0 z-50 w-full flex justify-between items-center bg-navdark shadow-sm bg-opacity-70
+     text-white hover:bg-white hover:text-secondary h-20 px-8"
+    // className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-8 transition-all ${
+    //   scrolled ? "bg-white text-black shadow-lg" : "bg-navdark bg-opacity-70 text-white"
+    // } h-20`}
      >
       <div className="w-full">
         <NavMenu/>
