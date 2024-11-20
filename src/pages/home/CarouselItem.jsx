@@ -68,7 +68,7 @@ const CarouselItem = () => {
   };
 
   return (
-    <div className="w-full px-10 ">
+    <div className="w-full px-10 max-md:px-5 ">
       <div className="w-full m-auto">
         <Slider {...settings}>
           {carouselData.map((item, index) => {
