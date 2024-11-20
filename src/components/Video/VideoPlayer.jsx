@@ -9,7 +9,7 @@ const VideoPlayer = () => {
     },
   });
 
-  const video = cld.video("file_zghaap"); 
+  const video = cld.video("pinnacle001"); 
 
   return (
     <div className="relative w-full h-full">

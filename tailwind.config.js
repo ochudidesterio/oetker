@@ -8,7 +8,10 @@ export default {
     extend: {
       fontFamily:{
         montserrat: ['Montserrat', 'sans-serif'],
-        merriweather: ['Merriweather', 'sans-serif']
+        merriweather: ['Merriweather', 'sans-serif'],
+        cardo: ['Cardo', 'sans-serif'],
+        inter: ['Inter', 'sans-serif']
+
       },
       colors:{
         "white":"#ffffff",

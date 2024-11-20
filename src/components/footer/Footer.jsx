@@ -18,10 +18,10 @@ const Footer = () => {
         {/* <div className='flex justify-center mt-3'>
             <a href="#" className='footerLinks'>COPYRIGHT</a>
         </div> */}
-        <div className='flex justify-center mt-8 text-white text-lg font-merriweather-600'>
+        <div className='flex justify-center mt-8 text-white text-lg font-cardo'>
             <a className='hover:underline hover:decoration-secondary' href="#">#MasterpieceHotels</a>
         </div>
-        <div className='flex flex-col justify-center font-merriweather-400 text-center text-sm max-md:text-[12px] text-secondary mt-4 pb-20'>
+        <div className='flex flex-col justify-center font-inter text-center text-sm max-md:text-[12px] text-secondary mt-4 pb-20'>
             <a className='hover:underline' href="/">www.oetkercollection.com</a>
             <p>Oetker Collection, Schillerstraße 6, 76530 Baden-Baden, Germany</p>
             <p>Oetker Hotel Management Company GmbH</p>

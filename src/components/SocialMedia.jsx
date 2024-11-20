@@ -14,7 +14,7 @@ const SocialMedia = () => {
      whileInView={"show"}
      viewport={{ once: false }}
      className="w-full flex flex-col justify-center items-center">
-      <div className="text-xl">#MasterpieceHotels</div>
+      <div className="text-xl font-cardo">#MasterpieceHotels</div>
       <div className="flex gap-8 py-6 max-md:gap-2">
         {[
           { icon: <FaTiktok size={20}  />, label: "TIK TOK" },
