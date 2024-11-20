@@ -7,7 +7,7 @@ import VideoSection from "./VideoSection";
 import DiscoverySection from "./DiscoverySection";
 import MeetUsSection from "./MeetUsSection";
 
-const HomePage = () => {
+const HomePage = ({scrolled}) => {
   return (
     <div>
       <section className="h-full w-full">
@@ -22,7 +22,7 @@ const HomePage = () => {
       <CustomBreak/>
       <DiscoverySection/>
       <CustomBreak/>
-      <MeetUsSection/>
+      <MeetUsSection scrolled={scrolled}/>
       <SocialMedia/>
     </div>
   );

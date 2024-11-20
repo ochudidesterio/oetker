@@ -6,7 +6,7 @@ import { DiOpera } from "react-icons/di";
 
 
 
-const MeetUsSection = () => {
+const MeetUsSection = ({scrolled}) => {
   const [visibleCount, setVisibleCount] = useState(1); // Initially visible items
   const [itemsToLoad, setItemsToLoad] = useState(1); // Default items to load
 
@@ -26,6 +26,11 @@ const MeetUsSection = () => {
       } else {
         setItemsToLoad(1); // small: 1 item
         setVisibleCount(1);
+      }
+
+      if(scrolled ){
+        setItemsToLoad(itemsToLoad)
+        setVisibleCount(visibleCount)
       }
     };
 
