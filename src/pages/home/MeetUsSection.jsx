@@ -76,11 +76,16 @@ const MeetUsSection = () => {
 const HoverCard = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleClick = ()=>{
+    console.log("Item",item)
+  }
+
   return (
     <div
       className="relative transition duration-300 cursor-pointer overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
       {!isHovered && (
         <div className="w-full">
