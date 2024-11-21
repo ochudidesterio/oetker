@@ -46,13 +46,14 @@ const Navbar = () => {
     setIsMouseEnter(false) 
   };
   return (
-    <div 
+    <div>
+      <div 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave} 
     //     className="fixed top-0 left-0 z-50 w-full flex justify-between items-center bg-navdark shadow-sm bg-opacity-70
     //  text-white hover:bg-white hover:text-secondary h-20 px-8"
     className={`fixed top-0 left-0 z-50 w-full flex justify-between items-center px-8 transition-all ${
-      scrolled ? "bg-white text-black shadow-lg" : "bg-navdark bg-opacity-70 text-white"
+      scrolled ? "bg-white text-black shadow-lg" : "bg-navdark bg-opacity-70 text-white hover:bg-white hover:text-secondary"
     } h-20`}
      >
       <div className="w-full">
@@ -87,8 +88,11 @@ const Navbar = () => {
         <NavButton 
         isMouseEnter={isMouseEnter}
         isMouseLeave={isMouseLeave}
+        
         />
       </div>
+    </div>
+
     </div>
   );
 };

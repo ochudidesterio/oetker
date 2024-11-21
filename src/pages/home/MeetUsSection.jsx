@@ -11,15 +11,16 @@ const MeetUsSection = () => {
   useEffect(() => {
     const updateItemsToLoad = () => {
       const width = window.innerWidth;
+      let newItemsToLoad = 1; // Default to small screen
       if (width >= 1024) {
-        setItemsToLoad(4); // xl: 4 items
+        newItemsToLoad = 4; // xl: 4 items
       } else if (width >= 768) {
-        setItemsToLoad(3); // large: 3 items
+        newItemsToLoad = 3; // large: 3 items
       } else if (width >= 540) {
-        setItemsToLoad(2); // medium: 2 items
-      } else {
-        setItemsToLoad(1); // small: 1 item
+        newItemsToLoad = 2; // medium: 2 items
       }
+      setItemsToLoad(newItemsToLoad);
+      setVisibleCount(newItemsToLoad); // Update visible items to match
     };
 
     updateItemsToLoad();
@@ -57,7 +58,7 @@ const MeetUsSection = () => {
       {visibleCount < paginationData.length && (
         <div className="text-center mt-6">
           <div
-            className=" text-secondary font-montserrat text-sm lowercase underline underline-offset-8 py-2 hover:text-accent transition duration-300"
+            className="text-secondary font-montserrat text-sm lowercase underline underline-offset-8 hover:text-accent transition duration-300"
             onClick={loadMore}
           >
             Load More
