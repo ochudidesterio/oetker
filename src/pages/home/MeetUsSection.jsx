@@ -20,7 +20,11 @@ const MeetUsSection = () => {
         newItemsToLoad = 2; // medium: 2 items
       }
       setItemsToLoad(newItemsToLoad);
-      setVisibleCount(newItemsToLoad); // Update visible items to match
+
+      // Update visible count only during initialization
+      if (visibleCount === 1) {
+        setVisibleCount(newItemsToLoad);
+      }
     };
 
     updateItemsToLoad();
@@ -29,7 +33,7 @@ const MeetUsSection = () => {
     return () => {
       window.removeEventListener("resize", updateItemsToLoad);
     };
-  }, []);
+  }, [visibleCount]); // Only trigger if `visibleCount` changes
 
   const loadMore = () => {
     setVisibleCount((prev) => Math.min(prev + itemsToLoad, paginationData.length));
