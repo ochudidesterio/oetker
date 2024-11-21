@@ -62,6 +62,47 @@ export const carouselData = [
         url:"/brenners"
 
     },
+    {
+      image: "/images/c2.jpg",
+      city: "Nairobi",
+      country:"Kenya",
+      title: "Qwetu",
+      description:"A historic icon in the heart of Germany’s beloved Baden-Baden spa city, set within its own private park just a short drive from the Black Forest Mountains.",
+      url:"/qwetu"
+
+  },
+]
+
+export const menuItems = [
+  {
+    name:"hotels",
+    url:"/hotels",
+    icon:true
+  },
+  {
+    name:"private villas",
+    url:"/private-villas"
+  },
+  {
+    name:"events",
+    url:"/events"
+  },
+  {
+    name:"sustainability",
+    url:"/sustainability"
+  },
+  {
+    name:"journal",
+    url:"/journal"
+  },
+  {
+    name:"boutique",
+    url:"/boutique"
+  },
+  {
+    name:"offers",
+    url:"/offers"
+  }
 ]
 
 export const paginationData = [

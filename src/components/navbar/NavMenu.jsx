@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 
-const NavMenu = () => {
+const NavMenu = ({handleNavMenu}) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleOnclick = () => {
     setIsOpen(!isOpen);
+    handleNavMenu(!isOpen)
   };
 
   return (
